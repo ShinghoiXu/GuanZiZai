@@ -41,8 +41,10 @@ void settings(){
 }
 */
 
+
 void setup() {
   fullScreen();
+  noCursor();
   mindSet = new MindSet(this, "COM11");
   file = new SoundFile(this,"myMusic.wav");
   file.loop();
@@ -65,19 +67,24 @@ void setup() {
 
 void draw() {
   background(0);
+  /*
   velocity.add(acc);
   myPoint.add(velocity);
   myPoint.x=round(max(myPoint.x,1000));
   myPoint.x=round(min(myPoint.x,30000));
   myPoint.y=round(max(myPoint.y,1000));
   myPoint.y=round(min(myPoint.y,30000));
+  */
+  //myPoint.x=round(myPoint.x);
+  myPoint.y=15000;
   
   for(int i = 0; i < layers; i++){
     preview();
   }
   colorOffset += 480;
   //renderAndSave();
-  println(frameCount+" "+int(myPoint.x)+" "+int(myPoint.y));
+  
+  //println(frameCount+" "+int(myPoint.x)+" "+int(myPoint.y));
 }
 
 float hueCorr(float hue){
@@ -238,15 +245,18 @@ String zeroFormat(Integer num, int len, boolean prev) {
 }
 
 public void attentionEvent(int attentionLevel) {
-  if(attentionLevel!=0)
-  acc.x=(attentionLevel-50)/12;
-  //println(attentionLevel);
+  if(attentionLevel!=0){
+    myPoint.x=map(attentionLevel,0,100,14000,21111)+random(100);
+    //acc.x=(attentionLevel-50)/12;
+    println(attentionLevel);
+  }
 }
 
 
 public void meditationEvent(int meditationLevel) {
   if(meditationLevel!=0)
-  acc.y=(meditationLevel-50)/12;
+  myPoint.y=15000+random(-5,5);
+  //acc.y=(meditationLevel-50)/12;
   //println(meditationLevel);
 }
 
@@ -254,7 +264,7 @@ int poorSigCount = 0;
 public void poorSignalEvent(int sig) {
   if(sig>0) poorSigCount++;
   if(sig==0) poorSigCount=0;
-  if(poorSigCount>60) {
+  if(poorSigCount>30) {
     myPoint = new PVector(15000,15000);
     poorSigCount = 0;
   }
