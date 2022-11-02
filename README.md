@@ -13,4 +13,4 @@ By correlating the viewer's brain waves with the images generated in real time, 
 
 Music is not uploaded because it's not open-source or license-free.
 
-[Qiji](https://github.com/LingDong-/qiji-font) Font is selected as the Chinese font of this project, special thanks to Lindong Huang. You can see more infomation about the font from [here](https://github.com/LingDong-/qiji-font)
+[Qiji](https://github.com/LingDong-/qiji-font) Font is selected as the Chinese font of this project, special thanks to Lindong Huang. You can see more infomation about the font from [here](https://github.com/LingDong-/qiji-font).
