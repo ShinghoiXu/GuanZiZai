@@ -12,3 +12,4 @@ Is the aestheticization of external objects also a form of self observation?
 By correlating the viewer's brain waves with the images generated in real time, the project creates a circular circuit that includes the human brain:the viewer's brain waves will affect the images on the screen in real time,and the images on the screen will affect the viewer's brain waves when they look at the screen.
 
 Music is not uploaded because it's not open-source or license-free.
+Qiji Font is selected as the Chinese font of this project, special thanks to Lindong Huang. You can see more infomation about the font from [here](https://github.com/LingDong-/qiji-font)
